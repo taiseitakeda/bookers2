@@ -1,2 +1,24 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-8 offset-md-1">
+      <h2>Book detail</h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>
+              <a class="nav-link" href="/users/:id">
+                <%= @book.user.image %><br>
+                <%= @book.user.name %>
+              </a>
+            </td>
+            <td>
+              <a class="nav-link" href="/books/:id"><%= @book.title %></a>
+            </td>
+            <td><%= @book.body %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
