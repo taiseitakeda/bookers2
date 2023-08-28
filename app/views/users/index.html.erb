@@ -1,14 +1,13 @@
 <div class="container">
   <div class="row">
-    <%= render 'list', books: @books %>
+    <%= render 'books/list', books: @books %>
     <div class="col-md-8 offset-md-1">
-      <h2>Books</h2>
+      <h2>Users</h2>
       <table class="table table-hover">
         <thead>
           <tr>
-            <th></th>
-            <th>Title</th>
-            <th>Opinion</th>
+            <th>image</th>
+            <th>name</th>
             <th colspan="3"></th>
           </tr>
         </thead>
@@ -17,9 +16,9 @@
             <tr>
               <td><%= image_tag book.user.get_profile_image(80,80) %></td>
               <td>
-                <a class="nav-link" href="/books/:id"><%= book.title %></a>
+                <%= user.name %>
               </td>
-              <td><%= book.body %></td>
+              <td><%= link_to "Show", book_path(book.id) %></td>
             </tr>
           <% end %>
         </tbody>
