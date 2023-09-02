@@ -1,8 +1,8 @@
 <div class="container">
-  <% if @bookers.errors.any? %>
-    <%= @bookers.errors.count %>errors prohibited this obj from being saved:
+  <% if flash[:error].present? %>
+  <%= flash[:error].count %>errors prohibited this obj from being saved:
     <ul>
-      <% @bookers.errors.full_messages.each do |message| %>
+      <% flash[:error].each do |message| %>
         <li><%= message %></li>
       <% end %>
     </ul>

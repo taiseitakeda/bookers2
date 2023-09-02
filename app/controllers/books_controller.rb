@@ -12,7 +12,7 @@ class BooksController < ApplicationController
       redirect_to book_path(@bookers.id)
       flash[:notice] = "You have created book successfully."
     else
-      redirect_to books_path
+      redirect_to books_path, flash: { error: @bookers.errors.full_messages}
     end
   end
 
