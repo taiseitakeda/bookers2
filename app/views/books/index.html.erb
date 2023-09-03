@@ -57,10 +57,12 @@
           <% @books.each do |book| %>
             <tr>
               <td>
-                <% if book.user.profile_image.attached? %>
-                    <%= image_tag book.user.get_profile_image(80,80) %>
-                <% else %>
-                    <%= image_tag 'no_image', size: "80x80" %>
+                <%= link_to user_path(book.user.id), class: "nav-link" do %>
+                  <% if book.user.profile_image.attached? %>
+                      <%= image_tag book.user.get_profile_image(80,80) %>
+                  <% else %>
+                      <%= image_tag 'no_image', size: "80x80" %>
+                  <% end %>
                 <% end %>
               </td>
               <td>
